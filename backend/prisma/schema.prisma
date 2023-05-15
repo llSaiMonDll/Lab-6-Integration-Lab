@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./noteapp.db"
+}
+
+model User{
+  id Int @id @default(autoincrement())
+  username String @unique
+  email String @unique
+  password String
+  notes Note[]
+  comments Comment[]
+}
+
+model Note{
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  creatorId Int 
+  createdBy User @relation(fields: [creatorId],references: [id])
+}
+
+model Comment{
+  id Int @id @default(autoincrement())
+  text String
+  createdAt DateTime @default(now())
+  creatorId Int 
+  createdBy User @relation(fields: [creatorId],references: [id])
+}

@@ -1,0 +1,23 @@
+{
+  "name": "105integration",
+  "version": "1.0.0",
+  "description": "This repository contain backend and frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThisTine/105integration.git"
+  },
+  "author": "FloatyKT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThisTine/105integration/issues"
+  },
+  "homepage": "https://github.com/ThisTine/105integration#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.7"
+  }
+}
